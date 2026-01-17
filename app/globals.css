@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+/* This applies your custom Geist font to the whole page */
+body {
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+}
+
+@theme {
+  --color-brand-primary: #0a5c4a; /* Deep Green */
+  --color-brand-accent: #85c226;  /* Bright Green */
+  --color-brand-dark: #051f18;    /* Dark Text */
+  --color-brand-light: #f8faf7;   /* Pale Background */
+}
