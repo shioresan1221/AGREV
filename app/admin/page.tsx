@@ -24,6 +24,7 @@ export default function AdminPage() {
       router.push('/');
       return;
     }
+    const allUsers = JSON.parse(localStorage.getItem('users') || '{}');
     setCurrentUser(user);
     setUsers(allUsers);
   }, [router]);
