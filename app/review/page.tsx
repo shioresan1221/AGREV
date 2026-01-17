@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 interface Question {
   question: string;
@@ -170,8 +170,11 @@ export default function ReviewPage() {
   const [showResults, setShowResults] = useState(false);
   const [currentUser, setCurrentUser] = useState<string | null>(null);
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const subject = searchParams.get('subject');
+  const filteredQuestions = subject ? questions.filter(q => q.subject === subject) : questions;
 
-  const currentQuestion = questions[currentQuestionIndex];
+  const currentQuestion = filteredQuestions[currentQuestionIndex];
 
   useEffect(() => {
     const user = localStorage.getItem('currentUser');
@@ -207,7 +210,7 @@ export default function ReviewPage() {
   };
 
   const moveToNext = () => {
-    if (currentQuestionIndex < questions.length - 1) {
+    if (currentQuestionIndex < filteredQuestions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
       setSelected(null);
     } else {
@@ -222,8 +225,9 @@ export default function ReviewPage() {
     const result = {
       date: new Date().toISOString(),
       score,
-      total: questions.length,
-      skipped
+      total: filteredQuestions.length,
+      skipped,
+      subject
     };
     users[currentUser].history = users[currentUser].history || [];
     users[currentUser].history.push(result);
@@ -254,13 +258,13 @@ export default function ReviewPage() {
         <div className="w-full max-w-2xl bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center">
           <h2 className="text-3xl font-bold mb-4 text-brand-primary">Quiz Complete!</h2>
           <p className="text-xl mb-2">
-            Your score: {score} / {questions.length}
+            Your score: {score} / {filteredQuestions.length}
           </p>
           <p className="text-lg mb-2">
             Skipped: {skipped}
           </p>
           <p className="text-lg mb-6">
-            Percentage: {Math.round((score / questions.length) * 100)}%
+            Percentage: {Math.round((score / filteredQuestions.length) * 100)}%
           </p>
           <div className="flex gap-4 justify-center">
             <button 
@@ -289,7 +293,7 @@ export default function ReviewPage() {
         <span className="font-bold text-brand-primary">Board Exam Reviewer</span>
         <div className="flex items-center gap-4">
           <span className="text-sm bg-brand-accent text-white px-3 py-1 rounded-full">
-            Question {currentQuestionIndex + 1} / {questions.length}
+            Question {currentQuestionIndex + 1} / {filteredQuestions.length}
           </span>
           <button 
             onClick={() => router.push('/')}
@@ -351,7 +355,7 @@ export default function ReviewPage() {
           onClick={handleNext}
           className="bg-brand-primary text-white px-8 py-3 rounded-xl font-bold hover:bg-brand-dark transition-all shadow-md"
         >
-          {currentQuestionIndex < questions.length - 1 ? 'Next Question →' : 'Finish Quiz'}
+          {currentQuestionIndex < filteredQuestions.length - 1 ? 'Next Question →' : 'Finish Quiz'}
         </button>
       </div>
 

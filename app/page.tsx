@@ -31,11 +31,38 @@ export default function Home() {
         <div className="flex gap-4">
           {currentUser ? (
             <>
-              <Link href="/review">
-                <button className="px-6 py-3 bg-brand-accent text-white rounded-lg hover:bg-brand-primary transition-all font-semibold shadow-md">
-                  Start Review
-                </button>
-              </Link>
+              <div className="grid grid-cols-2 gap-4 mb-6">
+                <Link href="/review?subject=Crop%20Science">
+                  <button className="px-6 py-3 bg-brand-accent text-white rounded-lg hover:bg-brand-primary transition-all font-semibold shadow-md">
+                    Crop Science
+                  </button>
+                </Link>
+                <Link href="/review?subject=Soil%20Science">
+                  <button className="px-6 py-3 bg-brand-accent text-white rounded-lg hover:bg-brand-primary transition-all font-semibold shadow-md">
+                    Soil Science
+                  </button>
+                </Link>
+                <Link href="/review?subject=Crop%20Protection">
+                  <button className="px-6 py-3 bg-brand-accent text-white rounded-lg hover:bg-brand-primary transition-all font-semibold shadow-md">
+                    Crop Protection
+                  </button>
+                </Link>
+                <Link href="/review?subject=Animal%20Science">
+                  <button className="px-6 py-3 bg-brand-accent text-white rounded-lg hover:bg-brand-primary transition-all font-semibold shadow-md">
+                    Animal Science
+                  </button>
+                </Link>
+                <Link href="/review?subject=Agricultural%20Economics">
+                  <button className="px-6 py-3 bg-brand-accent text-white rounded-lg hover:bg-brand-primary transition-all font-semibold shadow-md">
+                    Agricultural Economics
+                  </button>
+                </Link>
+                <Link href="/review?subject=Extension">
+                  <button className="px-6 py-3 bg-brand-accent text-white rounded-lg hover:bg-brand-primary transition-all font-semibold shadow-md">
+                    Extension
+                  </button>
+                </Link>
+              </div>
               <Link href="/profile">
                 <button className="px-6 py-3 border-2 border-brand-primary text-brand-primary rounded-lg hover:bg-brand-primary hover:text-white transition-all font-semibold">
                   Profile
