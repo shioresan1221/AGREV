@@ -38,37 +38,37 @@ export default function Home() {
             <>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
                 <Link href="/review?subject=Crop%20Science">
-                  <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer border-l-4 border-green-500">
+                  <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer border-l-4 border-brand-primary">
                     <h3 className="text-xl font-bold text-brand-primary mb-2">Crop Science</h3>
                     <p className="text-gray-600">Study plant growth, nutrients, and cultivation.</p>
                   </div>
                 </Link>
                 <Link href="/review?subject=Soil%20Science">
-                  <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer border-l-4 border-amber-500">
+                  <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer border-l-4 border-brand-primary">
                     <h3 className="text-xl font-bold text-brand-primary mb-2">Soil Science</h3>
                     <p className="text-gray-600">Learn about soil composition and fertility.</p>
                   </div>
                 </Link>
                 <Link href="/review?subject=Crop%20Protection">
-                  <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer border-l-4 border-red-500">
+                  <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer border-l-4 border-brand-primary">
                     <h3 className="text-xl font-bold text-brand-primary mb-2">Crop Protection</h3>
                     <p className="text-gray-600">Explore pest management and disease control.</p>
                   </div>
                 </Link>
                 <Link href="/review?subject=Animal%20Science">
-                  <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer border-l-4 border-blue-500">
+                  <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer border-l-4 border-brand-primary">
                     <h3 className="text-xl font-bold text-brand-primary mb-2">Animal Science</h3>
                     <p className="text-gray-600">Understand animal nutrition and health.</p>
                   </div>
                 </Link>
                 <Link href="/review?subject=Agricultural%20Economics">
-                  <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer border-l-4 border-yellow-500">
+                  <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer border-l-4 border-brand-primary">
                     <h3 className="text-xl font-bold text-brand-primary mb-2">Agricultural Economics</h3>
                     <p className="text-gray-600">Study farm management and market principles.</p>
                   </div>
                 </Link>
                 <Link href="/review?subject=Extension">
-                  <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer border-l-4 border-purple-500">
+                  <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer border-l-4 border-brand-primary">
                     <h3 className="text-xl font-bold text-brand-primary mb-2">Extension</h3>
                     <p className="text-gray-600">Learn about agricultural education and outreach.</p>
                   </div>
@@ -89,15 +89,15 @@ export default function Home() {
                 )}
                 <button 
                   onClick={handleLogout}
-                  className="px-6 py-3 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition-all font-semibold"
+                  className="px-4 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition-all font-semibold text-sm"
                 >
-                  Logout ({currentUser})
+                  Logout
                 </button>
               </div>
             </>
           ) : (
             <Link href="/login">
-              <button className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all font-semibold shadow-md">
+              <button className="px-6 py-3 bg-brand-primary text-white rounded-lg hover:bg-brand-dark transition-all font-semibold shadow-md">
                 Login / Sign Up
               </button>
             </Link>
