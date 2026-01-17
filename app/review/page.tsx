@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 
 interface Question {
@@ -2013,7 +2013,7 @@ const questions: Question[] = [
   }
 ];
 
-export default function ReviewPage() {
+function ReviewPageContent() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selected, setSelected] = useState<string | null>(null);
   const [score, setScore] = useState(0);
@@ -2328,5 +2328,13 @@ export default function ReviewPage() {
       </div>
 
     </div>
+  );
+}
+
+export default function ReviewPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+      <ReviewPageContent />
+    </Suspense>
   );
 }
