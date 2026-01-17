@@ -287,7 +287,7 @@ export default function ReviewPage() {
 
   if (showResults) {
     return (
-      <div className="min-h-screen bg-brand-light flex flex-col items-center justify-center p-6 text-brand-dark">
+      <div className="min-h-screen flex flex-col items-center justify-center p-6 text-brand-dark">
         <div className="w-full max-w-2xl bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center">
           <h2 className="text-3xl font-bold mb-4 text-brand-primary">Quiz Complete!</h2>
           <p className="text-xl mb-2">
@@ -319,7 +319,7 @@ export default function ReviewPage() {
   }
 
   return (
-    <div className="min-h-screen bg-brand-light flex flex-col items-center justify-center p-6 text-brand-dark">
+    <div className="min-h-screen flex flex-col items-center justify-center p-6 text-brand-dark">
       
       {/* Header / Progress Area */}
       <div className="w-full max-w-2xl mb-6 flex justify-between items-center">

@@ -50,7 +50,7 @@ export default function AdminPage() {
   if (!currentUser) return <div>Loading...</div>;
 
   return (
-    <div className="min-h-screen bg-brand-light p-6 text-brand-dark">
+    <div className="p-6 text-brand-dark">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-3xl font-bold mb-6 text-brand-primary">Admin Panel</h1>
         <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">

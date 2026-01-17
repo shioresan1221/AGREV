@@ -25,9 +25,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-100`}
       >
-        {children}
+        <header className="bg-blue-600 text-white p-4 shadow-md">
+          <div className="max-w-7xl mx-auto flex justify-between items-center">
+            <h1 className="text-xl font-bold">Board Exam Reviewer</h1>
+            <nav className="space-x-4">
+              <a href="/" className="hover:underline">Home</a>
+              <a href="/profile" className="hover:underline">Profile</a>
+              <a href="/admin" className="hover:underline">Admin</a>
+            </nav>
+          </div>
+        </header>
+        <main className="min-h-screen">
+          {children}
+        </main>
       </body>
     </html>
   );
