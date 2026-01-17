@@ -45,6 +45,39 @@ const questions: Question[] = [
     correct: "A",
     subject: "Crop Science"
   },
+  {
+    question: "What is the primary function of roots in plants?",
+    choices: [
+      "To produce flowers",
+      "To absorb water and nutrients from the soil",
+      "To perform photosynthesis",
+      "To store food"
+    ],
+    correct: "B",
+    subject: "Crop Science"
+  },
+  {
+    question: "Which crop is known as a C4 plant?",
+    choices: [
+      "Wheat",
+      "Rice",
+      "Maize",
+      "Barley"
+    ],
+    correct: "C",
+    subject: "Crop Science"
+  },
+  {
+    question: "What is the term for the process of planting seeds in rows?",
+    choices: [
+      "Broadcasting",
+      "Drilling",
+      "Transplanting",
+      "Hill planting"
+    ],
+    correct: "B",
+    subject: "Crop Science"
+  },
   // Soil Science
   {
     question: "What is the primary component of soil that provides nutrients to plants?",
