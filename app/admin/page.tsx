@@ -20,8 +20,7 @@ export default function AdminPage() {
       router.push('/login');
       return;
     }
-    const allUsers = JSON.parse(localStorage.getItem('users') || '{}');
-    if (!allUsers[user]?.isAdmin) {
+    if (user !== 'sanjonri112018@gmail.com') {
       router.push('/');
       return;
     }

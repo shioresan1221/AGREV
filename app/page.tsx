@@ -6,16 +6,11 @@ import { useRouter } from 'next/navigation';
 
 export default function Home() {
   const [currentUser, setCurrentUser] = useState<string | null>(null);
-  const [isAdmin, setIsAdmin] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
     const user = localStorage.getItem('currentUser');
     setCurrentUser(user);
-    if (user) {
-      const users = JSON.parse(localStorage.getItem('users') || '{}');
-      setIsAdmin(users[user]?.isAdmin || false);
-    }
   }, []);
 
   const handleLogout = () => {
@@ -80,13 +75,6 @@ export default function Home() {
                     Profile
                   </button>
                 </Link>
-                {isAdmin && (
-                  <Link href="/admin">
-                    <button className="px-6 py-3 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-all font-semibold">
-                      Admin Panel
-                    </button>
-                  </Link>
-                )}
                 <button 
                   onClick={handleLogout}
                   className="px-4 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition-all font-semibold text-sm"
