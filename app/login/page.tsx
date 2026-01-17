@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import emailjs from 'emailjs-com';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -28,7 +29,17 @@ export default function LoginPage() {
         const code = Math.floor(100000 + Math.random() * 900000).toString();
         setExpectedCode(code);
         setIsVerifying(true);
-        alert(`Verification code: ${code}`); // In production, send email
+        // Send email with code
+        emailjs.init('your_user_id'); // Replace with your EmailJS user ID
+        emailjs.send('your_service_id', 'your_template_id', { // Replace with your service and template IDs
+          to_email: email,
+          code: code
+        }).then(() => {
+          alert('Verification code sent to your email');
+        }).catch((error) => {
+          console.error('Email send error:', error);
+          alert('Failed to send email. Code: ' + code); // Fallback to alert
+        });
         return;
       } else {
         if (verificationCode !== expectedCode) {
